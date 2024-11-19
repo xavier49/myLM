@@ -21,12 +21,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          devtools::install_deps()
+          Rscript -e "install.packages('devtools')"
+          Rscript -e "devtools::install_deps()"
 
       - name: Run tests
         run: |
-          library(testthat)
-          test_check("myLM3")
+          Rscript -e "library(testthat)"
+          Rscript -e "test_check('myLM3')"
 
       - name: Check package
         run: |
