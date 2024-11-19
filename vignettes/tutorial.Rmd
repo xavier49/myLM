@@ -17,3 +17,37 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(myLM3)
 ```
+
+```{r}
+data(iris)
+model <- linearmodel(Y = "Sepal.Length", X = c("Sepal.Width", "Petal.Length"), data = iris)
+print(model$Coefficients)
+```
+
+```{r}
+plot(iris$Sepal.Length, model$Fitted_Values,
+     xlab = "Observed Sepal.Length",
+     ylab = "Fitted Sepal.Length",
+     main = "Fitted vs Observed")
+abline(a = 0, b = 1, col = "red")
+```
+
+```{r}
+data(mtcars)
+model <- linearmodel(Y = "mpg", X = c("wt", "hp"), data = mtcars)
+print(model$Coefficients)
+```
+
+```{r}
+cat("R-squared:", model$r.squared, "\n")
+cat("Adjusted R-squared:", model$adj.r.squared, "\n")
+```
+
+```{r}
+plot(model$Residuals,
+     ylab = "Residuals",
+     xlab = "Index",
+     main = "Residual Plot")
+abline(h = 0, col = "red")
+```
+
