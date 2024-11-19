@@ -87,7 +87,8 @@ linearmodel <- function(Y, X, data) {
 
   # Return a list with the coefficient table, R-squared, and model p-value
   results <- list(
-    Coefficients = summary,
+    Coefficients = Betas,
+    table = summary,
     r.squared = R_squared,
     adj.r.squared = adjusted_R_squared,
     fstatistic = F_statistic,
