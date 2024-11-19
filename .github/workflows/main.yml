@@ -21,7 +21,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages("devtools")
           devtools::install_deps()
 
       - name: Run tests
