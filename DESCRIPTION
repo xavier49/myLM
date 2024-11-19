@@ -1,0 +1,19 @@
+Package: myLM3
+Type: Package
+Title: Linear Model Fitting with Summary Statistics
+Version: 0.1.0
+Author: Xavier Lee
+Maintainer: Xavier Lee <xavierr@umich.edu>
+Description: This package provides a streamlined implementation of linear 
+    model fitting, allowing users to compute regression coefficients, 
+    standard errors, t-values, p-values, and various model statistics 
+    such as R-squared, adjusted R-squared, and F-statistics. It is designed 
+    for ease of use and efficient analysis of linear relationships in 
+    datasets. Suitable for both small-scale and introductory statistical 
+    analyses.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 7.3.2
