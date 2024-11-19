@@ -18,12 +18,16 @@ knitr::opts_chunk$set(
 library(myLM3)
 ```
 
+
+1) Fit a linear model to predict Sepal.Length using Sepal.Width and Petal.Length as covariates
 ```{r}
 data(iris)
 model <- linearmodel(Y = "Sepal.Length", X = c("Sepal.Width", "Petal.Length"), data = iris)
 print(model$Coefficients)
 ```
 
+
+Plot observed vs fitted values
 ```{r}
 plot(iris$Sepal.Length, model$Fitted_Values,
      xlab = "Observed Sepal.Length",
@@ -32,6 +36,8 @@ plot(iris$Sepal.Length, model$Fitted_Values,
 abline(a = 0, b = 1, col = "red")
 ```
 
+
+2) Fit a linear model to predict mpg using wt and hp as covariates
 ```{r}
 data(mtcars)
 model <- linearmodel(Y = "mpg", X = c("wt", "hp"), data = mtcars)
@@ -42,7 +48,7 @@ print(model$Coefficients)
 cat("R-squared:", model$r.squared, "\n")
 cat("Adjusted R-squared:", model$adj.r.squared, "\n")
 ```
-
+Plot residuals to check for patterns
 ```{r}
 plot(model$Residuals,
      ylab = "Residuals",
