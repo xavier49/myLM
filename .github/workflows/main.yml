@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           Rscript -e "install.packages('devtools')"
-          Rscript -e "devtools::install_deps()"
+          Rscript -e "devtools::install_deps(dep = TRUE)"
 
       - name: Run tests
         run: |
@@ -32,3 +32,4 @@ jobs:
       - name: Check package
         run: |
           R CMD check .
+
